@@ -39,7 +39,7 @@ def load_market_tsv(path: Path) -> pd.DataFrame:
         if not line.strip():
             continue
         parts = line.split("\t")
-        freq, siec, indic, unit, geo = [piece.strip() for piece in parts[0].split(",")]
+        _freq, siec, indic, unit, geo = [piece.strip() for piece in parts[0].split(",")]
         key = (indic, unit, siec)
         if key not in MARKET_KEEP:
             continue

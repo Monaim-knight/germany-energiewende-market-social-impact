@@ -8,8 +8,6 @@ from __future__ import annotations
 import json
 import unittest
 
-import numpy as np
-
 from energiewende.analytics import (
     balanced_cohort,
     decompose_retailer_density,

@@ -6,11 +6,11 @@ from pathlib import Path
 from typing import Any
 
 import matplotlib
-
-matplotlib.use("Agg")
-import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
+
+matplotlib.use("Agg")
+import matplotlib.pyplot as plt  # noqa: E402
 
 # Clean editorial color palette (colorblind-safe, print-ready)
 NAVY = "#0B3A66"
