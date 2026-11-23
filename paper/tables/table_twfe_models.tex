@@ -1,0 +1,19 @@
+\begin{table}[ht]
+\centering
+\caption{Two-way fixed effects panel associations with strict leave-one-out (LOO) stability gate}
+\label{tab:twfe_models}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{@{}lrrrrrrl@{}}
+\toprule
+Model & Coef. & SE & 95\% CI & Within $R^2$ & $N$ & LOO $\le 50\%$ & Gate \\
+\midrule
+M1: Gen. conc. $\sim$ Ren. elec. (All) & -0.5330 & 0.2018 & [-0.928, -0.138] & 0.071 & 359 & 34/34 & \textbf{PASS} \\
+M2: Gen. conc. $\sim$ Ren. elec. (EU-27) & -0.5390 & 0.2528 & [-1.034, -0.044] & 0.064 & 291 & 27/27 & \textbf{PASS} \\
+M3: Elec. PPS $\sim$ Gen. conc. (EU-27) & 0.0007 & 0.0003 & [0.000, 0.001] & 0.032 & 291 & 27/27 & \textbf{PASS} \\
+M4: Warmth (Tot) $\sim$ Elec. PPS & 8.9166 & 11.4073 & [-13.441, 31.274] & 0.008 & 297 & 25/27 & FAIL \\
+M5: Warmth (Low-inc) $\sim$ Gas PPS & 32.6051 & 32.8292 & [-31.739, 96.949] & 0.012 & 264 & 22/24 & FAIL \\
+M6: Warmth (Tot) $\sim$ Gen. conc. & 0.0240 & 0.0435 & [-0.061, 0.109] & 0.004 & 291 & 24/27 & FAIL \\
+M7: Legacy v2 (Gas density $\sim$ Gen.) & 0.0026 & 0.0101 & [-0.017, 0.022] & 0.001 & 326 & 25/30 & FAIL \\
+\bottomrule
+\end{tabular}}
+\end{table}

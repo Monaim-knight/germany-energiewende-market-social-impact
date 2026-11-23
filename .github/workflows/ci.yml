@@ -1,0 +1,33 @@
+name: Analytics CI — Lint, Contracts & Reproducibility
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python 3.12
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: "pip"
+
+      - name: Install package and dev dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -e ".[dev]"
+
+      - name: Lint with ruff
+        run: ruff check src tests
+
+      - name: Reproduce full analytics pipeline (cached Eurostat extracts)
+        run: python -m energiewende.pipeline
+
+      - name: Run data contract and analytical integrity tests
+        run: pytest -v

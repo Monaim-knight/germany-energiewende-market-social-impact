@@ -1,0 +1,124 @@
+{
+  "generated_utc": "2026-11-23T16:45:42.347638+00:00",
+  "window": [
+    2013,
+    2023
+  ],
+  "validation": {
+    "n_rows": 396,
+    "n_countries": 36,
+    "n_eu27_present": 27,
+    "n_big6_present": 6,
+    "years": [
+      2013,
+      2023
+    ],
+    "checks_passed": true
+  },
+  "sources": {
+    "market_tsv": {
+      "file": "data/raw/estat_nrg_ind_market.tsv",
+      "dataset": "nrg_ind_market",
+      "sha256": "2f9053bf85f7a2b489fcb01805a232188ab5f167e8863e32be19ee656dea9f0e"
+    },
+    "gas_final_consumption": {
+      "file": "data/external/gas_final_consumption.csv",
+      "dataset": "nrg_bal_s (FC_E + FC_NE, G3000, GWH)",
+      "sha256": "c7ea44bf7d5c2b840fc44d876e8460dee55c69005963144b1455c477f47720ce"
+    },
+    "population": {
+      "file": "data/external/population_1january.csv",
+      "dataset": "demo_pjan (TOTAL, T)",
+      "sha256": "fd5a8a4781d314d8626b4d92a5530ad73251efcd4972c3dad99ecad1b44ccae8"
+    },
+    "renewables": {
+      "dataset": "nrg_ind_ren",
+      "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/nrg_ind_ren?format=JSON&lang=EN&freq=A&nrg_bal=REN&nrg_bal=REN_ELC&unit=PC&sinceTimePeriod=2013&untilTimePeriod=2023",
+      "cached": true,
+      "rows": 409,
+      "sha256": "4833eb6b4ff5dd370cb7ed7a0f723963686fabee063d837117bda809dd8669cf"
+    },
+    "elec_prices": {
+      "dataset": "nrg_pc_204",
+      "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/nrg_pc_204?format=JSON&lang=EN&freq=S&siec=E7000&nrg_cons=KWH2500-4999&unit=KWH&tax=I_TAX&tax=X_TAX&currency=EUR&currency=PPS&sinceTimePeriod=2013-S1&untilTimePeriod=2023-S2",
+      "cached": true,
+      "rows": 457,
+      "sha256": "69cde44787460a39bc54405cc6f556eabf4c03a0a0a06387ca44e77a127d0279"
+    },
+    "gas_prices": {
+      "dataset": "nrg_pc_202",
+      "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/nrg_pc_202?format=JSON&lang=EN&freq=S&siec=G3000&nrg_cons=GJ20-199&unit=KWH&tax=I_TAX&tax=X_TAX&currency=EUR&currency=PPS&sinceTimePeriod=2013-S1&untilTimePeriod=2023-S2",
+      "cached": true,
+      "rows": 367,
+      "sha256": "098512bb52a876037342ae01f6159d0ae3a1cdb3e71e7b3e62468c6b491b8148"
+    },
+    "energy_poverty": {
+      "dataset": "ilc_mdes01",
+      "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/ilc_mdes01?format=JSON&lang=EN&freq=A&hhcomp=TOTAL&rskpovth=TOTAL&rskpovth=B_60&rskpovth=A_60&unit=PC&sinceTimePeriod=2013&untilTimePeriod=2023",
+      "cached": true,
+      "rows": 453,
+      "sha256": "689c399ce5d802c5feeeec4637278b4bd605e6bbc007f75fd76b395556cb4586"
+    },
+    "utility_arrears": {
+      "dataset": "ilc_mdes07",
+      "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/ilc_mdes07?format=JSON&lang=EN&freq=A&hhcomp=TOTAL&rskpovth=TOTAL&rskpovth=B_60&rskpovth=A_60&unit=PC&sinceTimePeriod=2013&untilTimePeriod=2023",
+      "cached": true,
+      "rows": 453,
+      "sha256": "990eaa45169e4eef121dd3b69046546e4b90d28283e1e09d8d197b944bb9b60b"
+    }
+  },
+  "processed_panel": {
+    "file": "data/processed/master_panel.csv",
+    "rows": 396,
+    "columns": [
+      "geo",
+      "year",
+      "e_cap_connected_mw",
+      "e_cap_decomm_mw",
+      "e_cap_net_var_mw",
+      "e_cap_share",
+      "e_cap_top",
+      "e_gen_firms_ge5",
+      "e_gen_share",
+      "e_gen_top",
+      "elec_retailers",
+      "gas_retail_firms_ge5",
+      "gas_retail_share_ge5",
+      "gas_retailers",
+      "gas_upstream_firms",
+      "fc_e_gwh",
+      "fc_ne_gwh",
+      "gas_fc_gwh",
+      "pop",
+      "ren_total_pct",
+      "ren_elec_pct",
+      "elec_price_eur_kwh",
+      "elec_price_extax_eur_kwh",
+      "elec_price_pps_kwh",
+      "elec_price_tax_share_pct",
+      "gas_price_eur_kwh",
+      "gas_price_extax_eur_kwh",
+      "gas_price_pps_kwh",
+      "gas_price_tax_share_pct",
+      "unable_warm_above60_pct",
+      "unable_warm_lowinc_pct",
+      "unable_warm_total_pct",
+      "unable_warm_income_gap_pp",
+      "utility_arrears_above60_pct",
+      "utility_arrears_lowinc_pct",
+      "utility_arrears_total_pct",
+      "utility_arrears_income_gap_pp",
+      "country_name",
+      "is_eu27",
+      "is_big6",
+      "gas_fc_twh",
+      "retailers_per_twh",
+      "in_density_sample",
+      "retailers_per_million",
+      "e_cap_other_major_share",
+      "e_gen_other_major_share",
+      "e_cap_gross_churn_mw"
+    ],
+    "sha256": "2bb9599fde89694629b13b991fc5fdd5984347351b13de2a285d0d18bbf8c715"
+  }
+}
