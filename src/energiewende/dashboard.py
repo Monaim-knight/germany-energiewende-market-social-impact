@@ -379,7 +379,7 @@ def build_dashboard(panel: pd.DataFrame, res: dict[str, Any], manifest: dict[str
 
     <section class="card" style="margin-bottom:0">
       <div class="card-head">
-        <h2>6. Grounded Analyst Copilot (Zero-Hallucination Briefs)</h2>
+        <h2>6. Executive Q&amp;A &amp; Source Provenance</h2>
       </div>
       <div class="qa-buttons" id="qa-buttons">
         <button class="pill active" data-q="cohorts">Why does Germany's rank flip by cohort?</button>
@@ -594,7 +594,7 @@ document.querySelector('#models-table tbody').innerHTML = DATA.models.map(m => `
   </tr>
 `).join('');
 
-// 6. Grounded Analyst Copilot
+// 6. Executive Q&A & Source Provenance
 const QA = {{
   cohorts: {{
     text: `<b>Finding:</b> Germany's electricity generation concentration (57.1% in 2023) looks <b>below median (-6.3 pp, Rank #21/35)</b> only when small non-EU/island utilities inflate the all-reporter median (63.4%). Against a <b>balanced EU-27 cohort (N=26)</b>, Germany sits near the median (-2.5 pp, Rank #15/26). Against <b>Europe's Big-6 interconnected markets</b> (DE, FR, IT, ES, PL, NL), Germany is <b>+15.0 pp ABOVE the median (42.1%) and Rank #2 of 6</b>—second-most concentrated behind nuclear-incumbent France (78.9%).`,
