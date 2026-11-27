@@ -6,6 +6,9 @@ __pycache__/
 .ruff_cache/
 .mplconfig/
 .DS_Store
+.Rproj.user/
+.Rhistory
+.RData
 paper/*.aux
 paper/*.log
 paper/*.out
